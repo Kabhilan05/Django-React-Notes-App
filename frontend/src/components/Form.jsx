@@ -2,6 +2,7 @@ import { useState } from "react";
 import api from "../api";
 import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants";
 import { useNavigate } from "react-router-dom";
+import '../styles/Form.css'
 
 function Form({ route, method }) {
   const [username, setUsername] = useState("");
@@ -11,7 +12,7 @@ function Form({ route, method }) {
 
   const name = method === "login" ? "Login" : "Register";
 
-  handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
     try {
@@ -53,3 +54,6 @@ function Form({ route, method }) {
     </form>
   );
 }
+
+
+export default Form
